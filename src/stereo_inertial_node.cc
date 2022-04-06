@@ -251,7 +251,7 @@ void ImageGrabber::SyncWithImu()
         }
         
         // Main algorithm runs here
-        cv::Mat Tcw = mpSLAM->TrackStereo(imLeft,imRight,tImLeft,vImuMeas);
+        cv::Mat Tcw = ORB_SLAM3::Converter::toCvMat(mpSLAM->TrackStereo(imLeft,imRight,tImLeft,vImuMeas).matrix());
 
         publish_ros_pose_tf(Tcw, current_frame_time, ORB_SLAM3::System::IMU_STEREO);
 

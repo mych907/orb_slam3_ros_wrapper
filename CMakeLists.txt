@@ -3,11 +3,11 @@ project(orb_slam3_ros_wrapper)
 
 # Change this to your installation of ORB-SLAM3. Default is ~/
 set(ORB_SLAM3_DIR
-   $ENV{HOME}/ORB_SLAM3
+   $ENV{HOME}/orbslam_ws/src/ORB_SLAM3
 )
 
 set(CMAKE_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS "-std=c++11")
+set(CMAKE_CXX_FLAGS "-std=c++14")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall -g")
 
 find_package (catkin REQUIRED COMPONENTS
@@ -21,7 +21,7 @@ find_package (catkin REQUIRED COMPONENTS
    message_generation
 )
 
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 4.2 REQUIRED)
 MESSAGE("OPENCV VERSION:")
 MESSAGE(${OpenCV_VERSION})
 

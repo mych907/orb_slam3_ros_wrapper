@@ -178,7 +178,7 @@ sensor_msgs::PointCloud2 tracked_mappoints_to_pointcloud(std::vector<ORB_SLAM3::
         if (map_points[i])
         {
 
-            tf::Vector3 point_translation(map_points[i]->GetWorldPos().at<float> (0), map_points[i]->GetWorldPos().at<float> (1), map_points[i]->GetWorldPos().at<float> (2));
+            tf::Vector3 point_translation(map_points[i]->GetWorldPos()(0), map_points[i]->GetWorldPos()(1), map_points[i]->GetWorldPos()(2));
 
             point_translation = tf_orb_to_ros * point_translation;
 

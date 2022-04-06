@@ -97,7 +97,7 @@ void ImageGrabber::GrabRGBD(const sensor_msgs::ImageConstPtr& msgRGB,const senso
     }
     
     // Main algorithm runs here
-    cv::Mat Tcw = mpSLAM->TrackRGBD(cv_ptrRGB->image, cv_ptrD->image, cv_ptrRGB->header.stamp.toSec());
+    cv::Mat Tcw = ORB_SLAM3::Converter::toCvMat(mpSLAM->TrackRGBD(cv_ptrRGB->image, cv_ptrD->image, cv_ptrRGB->header.stamp.toSec()).matrix());
 
     ros::Time current_frame_time = cv_ptrRGB->header.stamp;
 

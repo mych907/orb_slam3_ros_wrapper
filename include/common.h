@@ -26,6 +26,14 @@
 // ORB-SLAM3-specific libraries. Directory is defined in CMakeLists.txt: ${ORB_SLAM3_DIR}
 #include "include/System.h"
 #include "include/ImuTypes.h"
+#include "include/Converter.h"
+#include "include/SerializationUtils.h"
+#include "include/Tracking.h"
+#include "include/MapPoint.h"
+#include "include/KeyFrame.h"
+#include "include/Atlas.h"
+#include "include/Settings.h"
+
 
 extern ros::Publisher pose_pub;
 extern ros::Publisher map_points_pub;

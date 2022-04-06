@@ -168,7 +168,7 @@ void ImageGrabber::SyncWithImu()
                 mClahe->apply(im,im);
 
             // Main algorithm runs here
-            cv::Mat Tcw = mpSLAM->TrackMonocular(im, tIm, vImuMeas);
+            cv::Mat Tcw = ORB_SLAM3::Converter::toCvMat(mpSLAM->TrackMonocular(im, tIm, vImuMeas).matrix());
 
             publish_ros_pose_tf(Tcw, current_frame_time, ORB_SLAM3::System::IMU_MONOCULAR);
 
