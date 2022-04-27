@@ -3,7 +3,7 @@ project(orb_slam3_ros_wrapper)
 
 # Change this to your installation of ORB-SLAM3. Default is ~/
 set(ORB_SLAM3_DIR
-   $ENV{HOME}/orbslam_ws/src/ORB_SLAM3
+   $ENV{HOME}/catkin_ws/src/ORB_SLAM3
 )
 
 set(CMAKE_BUILD_TYPE "Release")
@@ -21,7 +21,7 @@ find_package (catkin REQUIRED COMPONENTS
    message_generation
 )
 
-find_package(OpenCV 4.2 REQUIRED)
+find_package(OpenCV)
 MESSAGE("OPENCV VERSION:")
 MESSAGE(${OpenCV_VERSION})
 
@@ -99,3 +99,4 @@ add_executable (${PROJECT_NAME}_rgbd
 target_link_libraries(${PROJECT_NAME}_rgbd
    ${LIBS}
 )
+
